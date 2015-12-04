@@ -43,8 +43,6 @@ using namespace android;
 static Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
-static bool CAF = false;
-
 static int camera_device_open(const hw_module_t *module, const char *name,
         hw_device_t **device);
 static int camera_get_number_of_cameras(void);
@@ -337,15 +335,6 @@ static int camera_set_parameters(struct camera_device *device,
     if (params.get(CameraParameters::KEY_RECORDING_HINT))
         isVideo = !strcmp(params.get(CameraParameters::KEY_RECORDING_HINT), "true");
 
-    /* Are we in continuous focus mode? */
-    if (strcmp(params.get(CameraParameters::KEY_FOCUS_MODE), "infinity") &&
-       strcmp(params.get(CameraParameters::KEY_FOCUS_MODE), "fixed") && (id == BACK_CAMERA_ID)) {
-        CAF = true;
-    } else {
-        /* Front camera or manually set infinity mode on rear cam */
-        CAF = false;
-    }
-
     String8 strParams = params.flatten();
 
 #ifdef LOG_PARAMETERS
@@ -377,8 +366,6 @@ static char *camera_get_parameters(struct camera_device *device)
 
     CameraParameters2 params;
     params.unflatten(String8(parameters));
-
-    params.set("fast-fps-mode", "0");
 
     char *ret = strdup(params.flatten().string());
     VENDOR_CALL(device, put_parameters, parameters);
