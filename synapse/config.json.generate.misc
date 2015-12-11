@@ -6,6 +6,17 @@ cat << CTAG
 {
 	name:Miscellaneous,
 		elements:[
+			{ SPane:{
+				title:"Wi-Fi Settings",
+				description:"Here you can manage some features related to Wi-Fi Functionality."
+			}},
+				{ SSeekBar:{
+					title:"Power Saving Management",
+					description:"0 = Minimum, 1 = Medium, 2 = Maximum",
+					max:2,
+					default:0,
+					action:"generic /data/.psm.info"
+				}},
 			`if [ -f "/sys/kernel/mm/ksm/run" ]; then
 			KSM=\`$BB cat /sys/kernel/mm/ksm/run\`
 			PTS=\`$BB cat /sys/kernel/mm/ksm/pages_to_scan\`
