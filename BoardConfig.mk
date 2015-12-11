@@ -147,8 +147,10 @@ BOARD_SEPOLICY_UNION := \
     file_contexts \
     file.te \
     gpsd.te \
-	init.te \
+    init.te \
+    hostapd.te \
     mediaserver.te \
+    netd.te \
     property_contexts \
     property.te \
     pvrsrvctl.te \
@@ -157,7 +159,8 @@ BOARD_SEPOLICY_UNION := \
     system_server.te \
     ueventd.te \
     vold.te \
-    wpa.te
+    wpa.te \
+    zygote.te
 
 # TWRP Specific
 BOARD_HAS_NO_REAL_SDCARD := true
