@@ -146,8 +146,8 @@ BOARD_SEPOLICY_UNION := \
     drmserver.te \
     file_contexts \
     file.te \
-    find.te \
     gpsd.te \
+	init.te \
     mediaserver.te \
     property_contexts \
     property.te \
@@ -155,8 +155,8 @@ BOARD_SEPOLICY_UNION := \
     rild.te \
     shell.te \
     system_server.te \
-    uci.te \
     ueventd.te \
+	untrusted_app.te \
     vold.te \
     wpa.te
 
