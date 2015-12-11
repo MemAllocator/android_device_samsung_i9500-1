@@ -156,7 +156,6 @@ BOARD_SEPOLICY_UNION := \
     shell.te \
     system_server.te \
     ueventd.te \
-	untrusted_app.te \
     vold.te \
     wpa.te
 
