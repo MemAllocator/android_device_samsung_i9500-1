@@ -146,6 +146,7 @@ BOARD_SEPOLICY_UNION := \
     drmserver.te \
     file_contexts \
     file.te \
+    find.te \
     gpsd.te \
     mediaserver.te \
     property_contexts \
@@ -154,7 +155,9 @@ BOARD_SEPOLICY_UNION := \
     rild.te \
     shell.te \
     system_server.te \
+    uci.te \
     ueventd.te \
+    vold.te \
     wpa.te
 
 # TWRP Specific
