@@ -29,7 +29,6 @@ echo 1 > /sys/class/misc/wolfson_control/switch_eq_speaker
 
 # PVR GPU Tweaks
 echo 0 > /sys/module/pvrsrvkm/parameters/gPVRDebugLevel
-echo 0 > /sys/module/pvrsrvkm/parameters/gPVREnableVSync
 
 # Restore WiFi PSM Flag
 echo 0 > /data/.psm.info
