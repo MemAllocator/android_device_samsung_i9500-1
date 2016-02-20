@@ -105,7 +105,6 @@ PRODUCT_PACKAGES += \
 
 # GearCM Extras
 PRODUCT_PACKAGES += \
-    OTAUpdates \
     Screencast \
     Synapse \
     gearinit.sh
