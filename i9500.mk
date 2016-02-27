@@ -87,7 +87,6 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
 
 PRODUCT_PACKAGES += \
-    camera.universal5410 \
     libhwjpeg
 
 # Charger
